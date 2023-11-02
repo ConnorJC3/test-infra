@@ -250,10 +250,13 @@ presubmits:
       description: kubernetes/kubernetes external test on pull request on eks
       testgrid-num-columns-recent: '30'
   - name: pull-aws-ebs-csi-driver-external-test-kustomize
+    branches:
     cluster: eks-prow-build-cluster
     always_run: true
     optional: true
     decorate: true
+    branches:
+      - ^release-.*$
     skip_branches:
       - gh-pages
     labels:
